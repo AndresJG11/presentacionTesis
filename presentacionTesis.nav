@@ -21,20 +21,22 @@
 \headcommand {\beamer@sectionpages {6}{7}}
 \headcommand {\beamer@subsectionpages {6}{7}}
 \headcommand {\sectionentry {3}{Red Generativa Adversaria Condicionada}{8}{Red Generativa Adversaria Condicionada}{0}}
-\headcommand {\beamer@sectionpages {8}{7}}
-\headcommand {\beamer@subsectionpages {8}{7}}
-\headcommand {\sectionentry {4}{Entrenamiento}{8}{Entrenamiento}{0}}
-\headcommand {\beamer@sectionpages {8}{7}}
-\headcommand {\beamer@subsectionpages {8}{7}}
-\headcommand {\sectionentry {5}{Resultados}{8}{Resultados}{0}}
-\headcommand {\beamer@sectionpages {8}{7}}
-\headcommand {\beamer@subsectionpages {8}{7}}
-\headcommand {\sectionentry {6}{Conclusiones}{8}{Conclusiones}{0}}
-\headcommand {\beamer@sectionpages {8}{7}}
-\headcommand {\beamer@subsectionpages {8}{7}}
-\headcommand {\sectionentry {7}{Trabajos Futuros}{8}{Trabajos Futuros}{0}}
-\headcommand {\beamer@partpages {1}{9}}
-\headcommand {\beamer@subsectionpages {8}{9}}
-\headcommand {\beamer@sectionpages {8}{9}}
-\headcommand {\beamer@documentpages {9}}
-\headcommand {\gdef \inserttotalframenumber {7}}
+\headcommand {\slideentry {3}{0}{1}{8/8}{}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\beamer@sectionpages {8}{8}}
+\headcommand {\beamer@subsectionpages {8}{8}}
+\headcommand {\sectionentry {4}{Entrenamiento}{9}{Entrenamiento}{0}}
+\headcommand {\beamer@sectionpages {9}{8}}
+\headcommand {\beamer@subsectionpages {9}{8}}
+\headcommand {\sectionentry {5}{Resultados}{9}{Resultados}{0}}
+\headcommand {\beamer@sectionpages {9}{8}}
+\headcommand {\beamer@subsectionpages {9}{8}}
+\headcommand {\sectionentry {6}{Conclusiones}{9}{Conclusiones}{0}}
+\headcommand {\beamer@sectionpages {9}{8}}
+\headcommand {\beamer@subsectionpages {9}{8}}
+\headcommand {\sectionentry {7}{Trabajos Futuros}{9}{Trabajos Futuros}{0}}
+\headcommand {\beamer@partpages {1}{10}}
+\headcommand {\beamer@subsectionpages {9}{10}}
+\headcommand {\beamer@sectionpages {9}{10}}
+\headcommand {\beamer@documentpages {10}}
+\headcommand {\gdef \inserttotalframenumber {8}}

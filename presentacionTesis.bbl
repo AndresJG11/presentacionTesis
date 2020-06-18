@@ -26,4 +26,8 @@ M.~S. {Acedo Guti{\'{e}}rrez}, ``{Tratamiento del dolor: t{\'{e}}cnicas
   \url{www.sciencedirect.com/science/article/pii/S2255496313001815}.
 \newblock Accedido: 2020-06-17.
 
+\bibitem{Isola}
+P.~Isola, J.-Y. Zhu, T.~Zhou, and A.~A. Efros, ``Image-to-image translation
+  with conditional adversarial networks,'' 2016.
+
 \end{thebibliography}

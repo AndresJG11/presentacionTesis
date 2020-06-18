@@ -2,7 +2,7 @@
 \beamer@sectionintoc {1}{Introducci\'on}{3}{0}{1}
 \beamer@sectionintoc {2}{Objetivos}{6}{0}{2}
 \beamer@sectionintoc {3}{Red Generativa Adversaria Condicionada}{8}{0}{3}
-\beamer@sectionintoc {4}{Entrenamiento}{8}{0}{4}
-\beamer@sectionintoc {5}{Resultados}{8}{0}{5}
-\beamer@sectionintoc {6}{Conclusiones}{8}{0}{6}
-\beamer@sectionintoc {7}{Trabajos Futuros}{8}{0}{7}
+\beamer@sectionintoc {4}{Entrenamiento}{9}{0}{4}
+\beamer@sectionintoc {5}{Resultados}{9}{0}{5}
+\beamer@sectionintoc {6}{Conclusiones}{9}{0}{6}
+\beamer@sectionintoc {7}{Trabajos Futuros}{9}{0}{7}
