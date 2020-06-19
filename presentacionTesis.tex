@@ -162,6 +162,8 @@
 			\end{block}
 		\end{frame}
 	
+	
+	
 	\section{Red Generativa Adversaria Condicionada}
 	
 	\begin{frame}{Red Generativa Adversaria Condicionada}
@@ -172,10 +174,65 @@
 		\end{figure}
 	\end{frame}
 	
+
+
 	\section{Entrenamiento}
+		\begin{frame}{Metodología de Entrenamiento Adversario}
+			\begin{figure}[!htb]
+				\tiny
+				\centering
+				\includegraphics[width=0.53\linewidth]{img/cGANCondensada}
+				\caption{\footnotesize Metodología de entrenamiento adversario para los modelos de segmentación de nervios periféricos [\textit{Autores}]}
+			\end{figure}
+		\end{frame}
+	
+	
+	
 	\section{Resultados}
+	
+		\begin{frame}{Resultados obtenidos para los modelos con perdida L1}
+			
+		\end{frame}
+	
+		\begin{frame}{Resultados obtenidos para los modelos con perdida IoU}
+			
+		\end{frame}
+
+
+
 	\section{Conclusiones}
+		
+		\begin{frame}{Conclusiones}
+			\begin{block}{Conclusiones}
+				\begin{itemize}
+					\item La arquitectura CGAN propuesta permite entrenar modelos para la segmentación de nervios periféricos usando una metodología de entrenamiento adversario condicional.
+					\item Las funciones de perdida utilizadas permiten evaluar la calidad de las segmentaciones realizadas por la red generadora durante el proceso de entrenamiento, obteniendo los mejores resultados sobre las métricas de evaluación
+					los modelos que fueron entrenados con la perdida IoU.
+				\end{itemize}
+			\end{block}
+		\end{frame}
+		
+		\begin{frame}{Conclusiones}
+			\begin{block}{Conclusiones}
+				\begin{itemize}
+					\item Las métricas utilizadas corroboran que cada uno de los modelos entrenados poseen la capacidad de identificar nervios en imágenes de ultrasonido para las bases de datos utilizadas
+				\end{itemize}
+			\end{block}
+		\end{frame}
+	
+	
+	
 	\section{Trabajos Futuros}
+	
+	\begin{frame}{Trabajos Futuros}
+		\begin{block}{Trabajos Futuros}
+			\begin{itemize}
+				\item Implementar el sistema automático para la segmentación de nervios periféricos en un software que facilite su uso en procedimientos médicos.
+				\item Utilizar los generadores desarrollados como modelos pre entrenados para modelar un sistema automático que permita realizar predicciones considerando características espacio temporales para el seguimiento de los nervios en tiempo real.
+				\item Aplicar enfoques probabilísticos que permitan identificar las estructuras nerviosas presentes en las imágenes de ultrasonido.
+			\end{itemize}
+		\end{block}
+	\end{frame}
 	
 	\bibliographystyle{ieeetr}
 	\bibliography{bibio}
