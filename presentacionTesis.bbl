@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Perez2011}
 M.~F. Perez, Cucchi, P.~Montes, and G.~Miguel, ``{Bloqueo continuo de los
@@ -15,19 +15,89 @@ M.~S. {Acedo Guti{\'{e}}rrez}, ``{Tratamiento del dolor: t{\'{e}}cnicas
 \newblock Accedido: 2020-06-17.
 
 \bibitem{estimulacion}
-``Nuevas alternativas en el tratamiento del síndrome de hombro doloroso.''
-  \url{www.elsevier.es/en-revista-medicina-familia-semergen-40-articulo-nuevas-alternativas-el-tratamiento-del-S1138359311003534?redirectNew=true}.
-\newblock Accedido: 2020-06-17.
+D.~W. F.~U. Dr~Carlos A.~Bollini, Dr Fernando J.~Cacheiro, ``Estimulaci{\'{o}}n
+  nerviosa perif{\'{e}}rica en anestesia regional.''
+  \url{http://anestesiaregionalargentina.com/web3/index.php/tecnicas/varios/83-neurolocalizacion}.
+\newblock Accedido: 2020-06-19.
 
 \bibitem{bloqueoUltrasonido}
-``Bloqueo continuo del nervio femoral guiado por ultrasonido y estimulador de
-  nervio para analgesia posterior a la artroplastia total de rodilla: estudio
-  multicéntrico, aleatorizado y controlado.''
-  \url{www.sciencedirect.com/science/article/pii/S2255496313001815}.
-\newblock Accedido: 2020-06-17.
+``Femoral nerve block under pocus.''
+  \url{hwww.grepmed.com/images/4850/nerveblock-pediatrics-transverse-clinical-femoral-pocus-pain}.
+\newblock Accedido: 2020-06-20.
+
+\bibitem{Ivan2006}
+J.~I. Manrique~Bacca, ``{Caracter{\'{i}}sticas de las demandas por lesiones a
+  nervios perif{\'{e}}ricos durante procedimientos invasivos. Vinculaci{\'{o}}n
+  de los anestesi{\'{o}}logos},'' {\em {Revista Colombiana de
+  Anestesiolog{\'{i}}a}}, vol.~34, pp.~83 -- 88, 06 2006.
+
+\bibitem{GiraldoGutierres2015}
+J.~J. {Giraldo Gutierres}, {\em {Segmentaci{\'{o}}n autom{\'{a}}tica de
+  estructuras nerviosas en im{\'{a}}genes de ultrasonido: una comparaci{\'{o}}n
+  entre t{\'{e}}cnicas de procesamiento de im{\'{a}}genes y modelos Bayesianos
+  no param{\'{e}}tricos.}}
+\newblock PhD thesis, Universidad Tecnologica de Pereira, 2015.
+
+\bibitem{Huang2019}
+C.~Huang, Y.~Zhou, W.~Tan, Z.~Qiu, H.~Zhou, Y.~Song, Y.~Zhao, and S.~Gao,
+  ``{Applying deep learning in recognizing the femoral nerve block region on
+  ultrasound images},'' {\em Annals of Translational Medicine}, vol.~7, no.~18,
+  pp.~453--453, 2019.
+
+\bibitem{Giraldo2015}
+J.~J. Giraldo, M.~A. Alvarez, and A.~A. Orozco, ``{Peripheral nerve
+  segmentation using Nonparametric Bayesian Hierarchical Clustering},'' in {\em
+  Proceedings of the Annual International Conference of the IEEE Engineering in
+  Medicine and Biology Society, EMBS}, vol.~2015-Novem, pp.~3101--3104, 2015.
+
+\bibitem{Hafiane2017}
+A.~Hafiane, P.~Vieyres, and A.~Delbos, ``{Deep learning with spatiotemporal
+  consistency for nerve segmentation in ultrasound images},'' tech. rep., 2017.
+
+\bibitem{Hadjerci2016}
+O.~Hadjerci, A.~Hafiane, N.~Morette, C.~Novales, P.~Vieyres, and A.~Delbos,
+  ``Assistive system based on nerve detection and needle navigation in
+  ultrasound images for regional anesthesia,'' {\em Expert Systems with
+  Applications}, vol.~61, 05 2016.
+
+\bibitem{GilGonzalez2015}
+J.~{Gil Gonzalez}, M.~A. Alvarez, and A.~A. Orozco, {\em {Automatic
+  segmentation of nerve structures in ultrasound images using Graph Cuts and
+  Gaussian processes}}, vol.~2015-November.
+\newblock 2015.
+
+\bibitem{Rubasinghe2019}
+I.~Rubasinghe and D.~Meedeniya, ``{Ultrasound nerve segmentation using deep
+  probabilistic programming},'' {\em Journal of ICT Research and Applications},
+  vol.~13, no.~3, pp.~241--256, 2019.
+
+\bibitem{Liu2018}
+C.~Liu, F.~Liu, L.~Wang, L.~Ma, and Z.-M. Lu, ``Segmentation of nerve on
+  ultrasound images using deep adversarial network,'' {\em International
+  Journal of Innovative Computing, Information and Control}, vol.~14,
+  pp.~53--64, 02 2018.
+
+\bibitem{Jocic2017}
+M.~Jocic, ``{Ultrasound Nerve Segmentation},'' tech. rep., 2017.
+
+\bibitem{HernanF}
+H.~F. Garcia, J.~J. Giraldo, M.~A. Alvarez, A.~A. Orozco, and D.~Salazar,
+  ``{Peripheral Nerve Segmentation Using SpeckleRemoval and Bayesian Shape
+  Models},'' {\em Springer International}, 2015.
+
+\bibitem{kaggle}
+``Ultrasound nerve segmentation.''
+  \url{www.kaggle.com/c/ultrasound-nerve-segmentation}.
+\newblock Accedido: 2019-11-20.
 
 \bibitem{Isola}
 P.~Isola, J.-Y. Zhu, T.~Zhou, and A.~A. Efros, ``Image-to-image translation
   with conditional adversarial networks,'' 2016.
+
+\bibitem{Zhang2017}
+``{Image Segmentation with Pyramid Dilated Convolution Based on ResNet and
+  U-Net},'' {\em Lecture Notes in Computer Science (including subseries Lecture
+  Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+  vol.~10635 LNCS, pp.~364--372, 2017.
 
 \end{thebibliography}

@@ -1,8 +1,12 @@
 \babel@toc {english}{}
 \beamer@sectionintoc {1}{Introducci\'on}{3}{0}{1}
-\beamer@sectionintoc {2}{Objetivos}{6}{0}{2}
-\beamer@sectionintoc {3}{Red Generativa Adversaria Condicionada}{8}{0}{3}
-\beamer@sectionintoc {4}{Entrenamiento}{9}{0}{4}
-\beamer@sectionintoc {5}{Resultados}{10}{0}{5}
-\beamer@sectionintoc {6}{Conclusiones}{12}{0}{6}
-\beamer@sectionintoc {7}{Trabajos Futuros}{14}{0}{7}
+\beamer@sectionintoc {2}{Motivaci\'on}{7}{0}{2}
+\beamer@sectionintoc {3}{Estado del Arte}{9}{0}{3}
+\beamer@sectionintoc {4}{Objetivos}{10}{0}{4}
+\beamer@sectionintoc {5}{Materiales y M\'etodos}{12}{0}{5}
+\beamer@sectionintoc {6}{Red Generativa Adversaria Condicionada}{16}{0}{6}
+\beamer@sectionintoc {7}{Entrenamiento}{16}{0}{7}
+\beamer@sectionintoc {8}{Resultados}{17}{0}{8}
+\beamer@sectionintoc {9}{Conclusiones}{25}{0}{9}
+\beamer@sectionintoc {10}{Trabajos Futuros}{27}{0}{10}
+\beamer@sectionintoc {11}{Referencias}{29}{0}{11}

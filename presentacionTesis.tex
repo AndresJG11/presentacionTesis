@@ -14,6 +14,14 @@
 
 \usepackage{subfig}
 
+\usepackage{animate}
+\usepackage{multirow}
+\usepackage{makecell}
+
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+
+
 %
 % DO NOT USE THIS FILE AS A TEMPLATE FOR YOUR OWN TALKS¡!!
 %
@@ -36,8 +44,6 @@
 
 \usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
-
-
 
 
 %\usepackage{times}
@@ -93,18 +99,18 @@
 {Universidad del Quindío, 2020}
 
 
-
 % The main document
+\setbeamertemplate{caption}[numbered]
 
 \begin{document}
 	
+	\renewcommand{\figurename}{Figura}
+	\renewcommand{\tablename}{Tabla}
 	
 	
 	\begin{frame}
 		\titlepage
 	\end{frame}
-	
-	
 	
 	\begin{frame}{Contenido}
 		\tableofcontents
@@ -126,20 +132,120 @@
 			\end{figure}
 		\end{frame}
 	
-		\begin{frame}{Metodologías para bloqueo de nervios}
-			\begin{figure}[!htb]
+		\begin{frame}{Técnicas empleadas para efectuar el bloqueo de nervios}
+			\begin{block}{Estimulación nerviosa}
+				Se utiliza una aguja cuya punta propaga a través de los órganos una \alert{señal eléctrica} con el fin de producir una \alert{respuesta motora} (RM) al estimular un nervio.
+			\end{block}
+			\begin{figure}
 				\centering
-				\includegraphics[width=0.25\linewidth]{img/estimulacion}
-				\caption{Bloqueo de nervios por medio de \alert{estimulación nerviosa} \cite{estimulacion}}
+				\subfloat[Sin RM. Señal: 1mA y 0.1ms]{
+					\label{f:gato}
+					\includegraphics[width=0.3\textwidth]{img/estimulacionUno}}
+				\subfloat[RM Leve. Señal: 3mA y 0.1ms]{
+					\label{f:tigre}
+					\includegraphics[width=0.3\textwidth]{img/estimulacionDos}}
+				\subfloat[RM mayor. Señal: 3mA y 0.3ms]{
+					\label{f:conejo}
+					\includegraphics[width=0.3\textwidth]{img/estimulacionTres}}
+				\caption{Localización de un nervio a 2cm de la aguja \cite{estimulacion}.}
+				\label{f:animales}
 			\end{figure}
 		\end{frame}
 	
-		\begin{frame}{Metodologías para bloqueo de nervios}
+		\begin{frame}{Técnicas empleadas para efectuar el bloqueo de nervios}
+			\begin{block}{Guiado por ultrasonido}
+				El bloqueo de nervios guiado utilizando imágenes de ultrasonido permite identificar elementos como  arterías y venas que deben ser \alert{evitados} y sirven para \alert{guiar} al especialista a encontrar el nervio objetivo \cite{bloqueoUltrasonido}.
+			\end{block}
+			\begin{center}
+				\animategraphics[autoplay,loop,width=0.8\linewidth]{10}{img/gif/frame-}{0}{43}
+			\end{center}
+			
+	\end{frame}
+		\begin{frame}{Retos de identificar estructuras nerviosas en imágenes de ultrasonido}
+			\begin{block}{Retos}
+				\begin{itemize}
+					\item La \alert{estructura} y \alert{forma} del nervio presentan no linealidades, además la calidad de las imágenes se ve afectada por \alert{ruido acústico} y las características del transductor.
+					\item La implementación de imágenes de ultrasonido ha permitido que expertos en esta técnica logren hasta un \alert{95\% de aciertos} en el bloqueo de nervios.
+					\item  Los errores podrían conllevar a \alert{diversas complicaciones} en el paciente como lesiones vasculares, articulares, perdida temporal de caminar normalmente, entre otras\cite{Ivan2006} \cite{GiraldoGutierres2015}.
+				\end{itemize}
+			\end{block}
+		\end{frame}
+	
+	
+	
+	\section{Motivación}
+	
+%		\begin{frame}{Retos de identificar estructuras nerviosas en imágenes de ultrasonido}
+%			\begin{figure}[!htb]
+%				\centering
+%				\includegraphics[width=0.8\linewidth]{img/nervioFemoral}
+%				\caption{Variación anatómica y de estructura del nervio femoral [\textit{UltraDB-UTP}]}
+%			\end{figure}
+%		\end{frame}
+	
+		\begin{frame}{Segmentación de nervios periféricos utilizando aprendizaje de máquina}
+			Con el fin de \alert{asistir en la localización} de estructuras nerviosas en imágenes de ultrasonido, se han desarrollado algoritmos que implementan técnicas de aprendizaje de maquina.
+			\begin{block}{Técnicas utilizadas para segmentar nervios periféricos en imágenes de ultrasonido}
+				\begin{itemize}
+					\item Redes Neuronales Convolucionales.
+					\item Enfoques Bayesianos.
+					\item Procesos Gausianos.
+					\item \alert{Redes Generativas Adversarias}
+					\item Filtro + Enfoque Bayesiano
+				\end{itemize}
+			\end{block}
+		\end{frame}
+	
+		\begin{frame}{Ventajas de implementar Redes Generativas Adversarias}
+				Mediante el entrenamiento adversario se consideran características como la \alert{variabilidad anatómica} del nervio y se tiene un \alert{contexto global} de la imagen.
 			\begin{figure}[!htb]
 				\centering
-				\includegraphics[width=0.7\linewidth]{img/bloqueoUltrasonido}
-				\caption{Bloqueo de nervios guiado por \alert{ultrasonido } \cite{bloqueoUltrasonido}}
-			\end{figure}
+				\includegraphics[width=0.8\linewidth]{img/fallaCNN}
+				\caption{Fallas de segmentación usando redes convolucionales. Izquierda: Independencia en la predicción de pixeles. Derecha: No hay predicción debido al tamaño del nervio\cite{Huang2019}}
+			\end{figure} 
+		\end{frame}
+	
+	
+	
+		\section{Estado del Arte}
+	
+		\begin{frame}{Estado del arte}
+			\begin{table}
+			\footnotesize
+			\centering
+			%\caption{Comparación con trabajos relacionados en el estado del arte. Se presentan las medias y desviaciones estándar obtenidos por los modelos de segmentación del nervio correspondiente, los cuales fueron evaluados con la métrica indicada. Se indica con NR los autores que no reportaron la desviación estándar.}
+			\caption{Trabajos sobre la segmentación de nervios periféricos en el estado del arte. NR: No Reporta, DS: ``Dice Score'', IoU: ``Intersection Over Union'', MSE: ``Mean Square Error''}
+			\vspace{-0.5cm}
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				\textbf{Nervio} & \textbf{Modelo} & \textbf{Métrica} & \textbf{Resultado} & \textbf{Referencia} \\
+				\hline
+				\hline
+				\textbf{Ulnar} & \textbf{Bayesian HC} & \textbf{MSE} & \textbf{$ 1.03 \pm 0.3790 $} & \textbf{\cite{Giraldo2015}} \\
+				\hline
+				\hline
+				\textbf{Peroneal} & \textbf{Bayesian HC} & \textbf{MSE} & \textbf{$ 1.698 \pm 0.564 $} & \textbf{\cite{Giraldo2015}} \\
+				\hline
+				\hline
+				\textbf{Mediano} & \textbf{CNN+Spatiotemporal} & \textbf{DS} & \textbf{$ 0.96 \pm 0.2500 $} & \textbf{\cite{Hafiane2017}} \\
+				\hline
+				Mediano & Localization + PGVF  & DS & $ 0.81 \pm 0.1000 $ & \cite{Hadjerci2016} \\
+				\hline
+				Mediano & Graph Cuts & DS & $ 0.60 \pm 0.0052$ & \cite{GilGonzalez2015} \\
+				\hline
+				\hline
+				\textbf{Plexo Braquial} & \textbf{\alert{GAN-DPP}} & \textbf{DS} & \textbf{$ 0.99 \pm NR  $} & \textbf{\cite{Rubasinghe2019}} \\
+				\hline
+				Plexo Braquial & \alert{GAN-ET} & DS & $ 0.73 \pm NR $ & \cite{Liu2018} \\
+				\hline
+				Plexo Braquial & U-net & DS & $ 0.69 \pm 0.0004 $ & \cite{Jocic2017} \\
+				\hline
+				\hline
+				\textbf{Femoral} & \textbf{U-net} & {IoU} & \textbf{$ 0.644 \pm NR $} & \textbf{\cite{Huang2019}}\\
+				\hline
+			\end{tabular}
+			\label{tab:comparacion}
+		\end{table}
 		\end{frame}
 
 
@@ -164,15 +270,92 @@
 	
 	
 	
-	\section{Red Generativa Adversaria Condicionada}
+	\section{Materiales y Métodos}
 	
-	\begin{frame}{Red Generativa Adversaria Condicionada}
-		\begin{figure}[!htb]
+	\begin{frame}{Bases de Datos}
+		Las transformaciones hacen referencia al \alert{aumento de datos} necesario para simular mas datos de entrenamiento y así obtener mejores resultados.
+		\begin{table}[!htb]
 			\centering
-			\includegraphics[width=0.7\linewidth]{img/cGANOur}
-			\caption{Diagrama de CGAN utilizada para la segmentación de nervios periféricos \cite{Isola}}
+			\caption{Bases de datos utilizadas en el proyecto.}
+			\begin{tabular}{|c|c|c|c|}
+				\hline
+				\textbf{Base de datos} & \textbf{Nervio} & \textbf{Originales} & \textbf{Transformaciones} \\
+				\hline
+				\multirow{3}{3cm}{UltraDB-UTP \cite{HernanF}} & Ciático & 207 & 2070\\
+				\cline{2-4}
+				& Cubital & 252 & 2520\\
+				\cline{2-4}
+				& Mediano & 91 & 910 \\
+				\cline{2-4}
+				& Femoral & 157 & 1570 \\
+				\hline
+				\makecell{Nerve\\Segmentation \cite{kaggle}} & \makecell{Plexo\\Braquial} & 2323 & 2323\\
+				\hline
+			\end{tabular}
+			\label{tab:cantidadNervios}
+		\end{table}
+	\end{frame}
+
+	\begin{frame}{Aumento de datos}
+		\begin{figure}
+			\centering
+			\subfloat[Ampliación + Corte aleatorio]{
+				\includegraphics[width=0.4\textwidth]{img/cropMuestra}}
+			\subfloat[Deformación elástica]{
+				\includegraphics[width=0.4\textwidth]{img/elasticDeformationCiatico}}
+			\caption{Técnicas para aumentar datos empleadas.}
 		\end{figure}
 	\end{frame}
+
+	\begin{frame}{Conjuntos de entrenamiento y validación}
+		La base de datos se separaron entre un 80\% para el conjunto de entrenamiento y el 20\% restante para validación.
+		\begin{table}[!htb]
+			\centering
+			\caption{Cantidad de imágenes correspondientes a los conjuntos de entrenamiento y validación}
+			\begin{tabular}{|c|c|c|c|}
+				\hline
+				\textbf{Base de datos} & \textbf{Nervio} & \textbf{Entrenamiento} & \textbf{Validación} \\
+				\hline
+				\multirow{3}{3cm}{UltraDB-UTP \cite{HernanF}} & Ciatico & 1656 & 414\\
+				\cline{2-4}
+				& Cubital & 2016 & 504\\
+				\cline{2-4}
+				& Mediano & 728 & 182 \\
+				\cline{2-4}
+				& Femoral & 1256 & 314 \\
+				\hline
+				\makecell{Nerve\\Segmentation \cite{kaggle}} & \makecell{Plexo\\Braquial} & 1858 & 465\\
+				\hline
+			\end{tabular}
+			\label{tab:entrenamientoValidacion}
+		\end{table}
+	\end{frame}
+
+	\begin{frame}{Entorno de desarrollo}
+		\begin{figure}
+			\centering
+			\subfloat[Python]{
+				\includegraphics[width=0.2\textwidth]{img/python}}
+			\subfloat[Tensorflow]{
+				\includegraphics[width=0.2\textwidth]{img/tensorflow}}
+			\subfloat[Google Colab]{
+				\includegraphics[width=0.3\textwidth]{img/colab}}
+			\subfloat[Google Drive]{
+				\includegraphics[width=0.2\textwidth]{img/drive}}
+			\caption{Herramientas utilizadas}
+		\end{figure}
+	\end{frame}
+
+	
+	\section{Red Generativa Adversaria Condicionada}
+	
+%	\begin{frame}{Red Generativa Adversaria Condicionada}
+%		\begin{figure}[!htb]
+%			\centering
+%			\includegraphics[width=0.7\linewidth]{img/cGANOur}
+%			\caption{Diagrama de CGAN utilizada para la segmentación de nervios periféricos \cite{Isola}}
+%		\end{figure}
+%	\end{frame}
 	
 
 
@@ -180,8 +363,8 @@
 		\begin{frame}{Metodología de Entrenamiento Adversario}
 			\begin{figure}[!htb]
 				\tiny
-				\centering
-				\includegraphics[width=0.53\linewidth]{img/cGANCondensada}
+				\centering %ganCondensada %cGANCondensada
+				\includegraphics[width=0.53\linewidth]{img/ganCondensada}
 				\caption{\footnotesize Metodología de entrenamiento adversario para los modelos de segmentación de nervios periféricos [\textit{Autores}]}
 			\end{figure}
 		\end{frame}
@@ -190,13 +373,194 @@
 	
 	\section{Resultados}
 	
+		\begin{frame}{Resultados del discriminador}
+			\begin{figure}
+				\centering
+				\subfloat[Segmentación generada erróneamente para el nervio mediano por el generador con perdida IoU.]{
+					\includegraphics[width=0.5\textwidth]{img/discriminador/discrPrediccionFalsa2}}
+				\subfloat[Modelo IoU para el nervio mediano engañando al discriminador.]{
+					\includegraphics[width=0.5\textwidth]{img/discriminador/discrEnganado2}}
+				\caption{Resultados al evaluar el discriminador}
+			\end{figure}
+		\end{frame}
+		
+		\begin{frame}{Resultados del discriminador}
+			\begin{figure}
+				\centering
+				\subfloat[Segmentación generada correctamente para el nervio mediano por el generador con perdida IoU identificada como falsa.]{
+					\includegraphics[width=0.5\textwidth]{img/discriminador/discrExigente2}}
+				\subfloat[Superposición entre etiquetas. Base de datos: Rojo, Predicción: Verde]{
+					\includegraphics[width=0.3\textwidth]{img/discriminador/discrExigenteSuper}}
+				\caption{Discriminador exigente}
+			\end{figure}
+		\end{frame}
+	
+		\begin{frame}{Resultados del discriminador}
+			\begin{figure}
+				\centering
+				\subfloat[Discriminador clasificando erróneamente las imágenes para el nervio plexo braquial]{
+					\includegraphics[width=0.5\textwidth]{img/discriminador/discrContrario2}}
+				\subfloat[Discriminador clasificando ambas segmentaciones como falsas para el nervio mediano.]{
+					\includegraphics[width=0.5\textwidth]{img/discriminador/discrFalsoFalso2}}
+				\caption{Resultados del discriminador}
+			\end{figure}
+		\end{frame}
+	
 		\begin{frame}{Resultados obtenidos para los modelos con perdida L1}
-			
+			\begingroup
+			\renewcommand{\arraystretch}{2}
+			\begin{table}[!htb]
+				\caption{Métricas de evaluación obtenidas para los modelos L1. E: Épocas, T: Tiempo de entrenamiento (Horas:Minutos), DS: ``Dice Score'', IoU: ``Intersection Over Union''.}
+				\tiny
+				\begin{tabular}{|c|c|c|c|c|c|c|c|}
+					\hline
+					\multirow{3}{0.8cm}{\textbf{Base de datos}} & \multirow{3}{0.6cm}{\textbf{Nervio}} &  \multicolumn{6}{c|}{\textbf{Perdida L1}}  \\ \cline{3-8}
+					& & \multicolumn{2}{c|}{\textbf{Entrenamiento}} & \multicolumn{2}{c|}{\textbf{Validación}} & \multirow{2}{0.2cm}{\textbf{E}} & \multirow{2}{0.2cm}{\textbf{T}}   \\
+					\cline{3-6}
+					& & \textbf{DS}  & \textbf{IoU} & \textbf{DS} & \textbf{IoU} & & \\
+					\hline \hline
+					\multirow{4}{1cm}{\textbf{UltraDB-UTP}} & \textbf{Ciático} & $ 0.64 \pm 0.057 $ & $ 0.51 \pm 0.0513$ & $ 0.64 \pm  0.0545$ & $ 0.51 \pm 0.0496$ & 88 & 7:16 \\
+					\cline{2-8}
+					& \textbf{Cubital} & $ 0.63 \pm 0.090 $ & $ 0.52 \pm 0.0756$ & $ 0.63 \pm 0.0902$ & $ 0.52 \pm 0.0743$ & 77 & 7:31 \\
+					\cline{2-8}
+					& \textbf{Mediano} & $ 0.56 \pm 0.123$ & $ 0.47 \pm 0.1015$ & $ 0.62 \pm 0.1060$ & $ 0.52 \pm 0.0878$ & 258 & 9:45 \\
+					\cline{2-8}
+					& \textbf{Femoral} & $ 0.84 \pm 0.019 $ & $ 0.75 \pm 0.0216$ & $ 0.85 \pm 0.0121$ & $ 0.75 \pm 0.0148$ & 157 & 9:55  \\
+					\hline
+					\hline
+					\makecell{\textbf{Nerve} \\ \textbf{Segmentation}} & \makecell{\textbf{Plexo} \\ \textbf{Braquial}}  & $ 0.75 \pm 0.001 $ & $ 0.62 \pm 0.0325$ & $ 0.43 \pm 0.0869$ & $ 0.32 \pm 0.0587$ & 317 & 8:32 \\
+					\hline
+				\end{tabular}
+				\label{tab:entrenamientoL1}
+			\end{table}
+		\endgroup
+		\end{frame}
+	
+		\begin{frame}{Resultados obtenidos para los modelos con perdida L1}
+			\begin{table}[!htb]
+				\centering
+				\footnotesize
+				\begin{tabular}{|c|c||c|c|}
+					\hline
+					\textbf{Perdida} & \textbf{Resultado} & \textbf{\% Fondo} & \textbf{\% Nervio} \\
+					\hline
+					$\mathcal{L}_{L1}$ & 0.0438 & \multirow{2}{1cm}{97.81\%} & \multirow{2}{1.3cm}{2.19 \% } \\
+					\cline{1-2}
+					$\mathcal{L}_{\operatorname{IoU}}$ & 1.0 & & \\
+					\hline
+				\end{tabular}
+				\label{tab:problemal1}
+			\end{table}
+			\begin{figure}
+				\centering
+				\subfloat[Predicción del modelo L1 realizada para el nervio femoral]{
+					\includegraphics[width=0.6\textwidth]{img/generador/l1_femoral}}
+				\subfloat[Comparación del nervio ciático contra imagen sin nervio]{
+					\includegraphics[width=0.4\textwidth]{img/problemaL1}}
+				\caption{Predicción y problema de la perdida L1}
+			\end{figure}
 		\end{frame}
 	
 		\begin{frame}{Resultados obtenidos para los modelos con perdida IoU}
-			
+			\begingroup
+			\renewcommand{\arraystretch}{2}
+			\begin{table}[!htb]
+				\tiny
+				\caption{Métricas de evaluación obtenidas para los modelos IoU. E: Épocas, T: Tiempo de entrenamiento (Horas:Minutos), NR: No Reporta, DS: ``Dice Score'', IoU: ``Intersection Over Union''.}
+				\begin{tabular}{|c|c|c|c|c|c|c|c|}
+					\hline
+					\multirow{3}{0.8cm}{\textbf{Base de datos}} & \multirow{3}{0.6cm}{\textbf{Nervio}} &  \multicolumn{6}{c|}{\textbf{Perdida IoU}}  \\ \cline{3-8}
+					& & \multicolumn{2}{c|}{\textbf{Entrenamiento}} & \multicolumn{2}{c|}{\textbf{Validación}} & \multirow{2}{0.2cm}{\textbf{E}} & \multirow{2}{0.2cm}{\textbf{T}}   \\
+					\cline{3-6}
+					& & \textbf{DS}  & \textbf{IoU} & \textbf{DS} & \textbf{IoU} & & \\
+					\hline \hline
+					\multirow{4}{1cm}{\textbf{UltraDB-UTP}}& \textbf{Ciático} & $0.90 \pm 0.0042 $ & $ 0.83 \pm 0.0086$ & $ 0.89 \pm 0.1250$ & $ 0.80 \pm 0.1250$ & 297 & 7:41 \\
+					\cline{2-8}
+					& \textbf{Cubital} & $ 0.78 \pm 0.0851 $ & $ 0.71 \pm 0.0806$ & $ 0.78 \pm 0.0762$ & $ 0.70 \pm 0.0733$ & 270 & 8:13 \\
+					\cline{2-8}
+					& \textbf{Mediano} & $ 0.94 \pm 0.0096$ & $ 0.89 \pm0.0105$ & $ 0.92 \pm 0.0169 $ & $ 0.86\pm 0.0189$ & 744 & 8:54 \\
+					\cline{2-8}
+					& \textbf{Femoral} & $ 0.91 \pm 0.0074 $ & $ 0.84 \pm 0.0109$ & $ 0.88 \pm 0.0186 $ & $ 0.80 \pm 0.0240$ & 474 & 8:54  \\
+					\hline
+					\hline
+					\makecell{\textbf{Nerve} \\ \textbf{Segmentation}}& \makecell{\textbf{Plexo} \\ \textbf{Braquial}}   & $ 0.77 \pm 0.0006 $ & $ 0.65 \pm 0.0306$ & $ 0.72 \pm 0.0426$ & $ 0.60 \pm 0.0409$ & 265 & 7:53 \\
+					\hline
+				\end{tabular}
+				\label{tab:entrenamientoIoU}
+			\end{table}
+			\endgroup
 		\end{frame}
+		
+		\begin{frame}{Resultados obtenidos para los modelos con perdida IoU}
+			\[ Dice \ Score: 92.66 \% \quad |  \quad Jaccard \ Score: 86.32  \% \]
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=\linewidth]{img/generador/iou_plexo}
+				\caption{Predicción para el nervio plexo braquial realizada por el modelo IoU.}
+			\end{figure}
+		\end{frame}
+	
+		\begin{frame}{Comparación con el estado del arte}
+			
+			\begin{table}[!htb]
+				\tiny
+				\centering
+				\vspace{-0.3cm}	
+				\caption{Comparación con trabajos relacionados. NR: No Reporta, DS: ``Dice Score'', IoU: ``Intersection Over Union''.}
+				\begingroup
+				\renewcommand{\arraystretch}{1}
+				\begin{tabular}{|c|c|c|c|c|}
+					\hline
+					\textbf{Nervio} & \textbf{Modelo} & \textbf{Métrica} & \textbf{Resultado} & \textbf{Referencia} \\
+					\hline
+					\hline
+					\textbf{\alert{Femoral}} & \textbf{\alert{CGAN-IoU}} & \textbf{\alert{IoU}} & \textbf{\alert{$0.80 \pm 0.0240$}} & \textbf{\alert{Propio}} \\
+					\hline
+					\alert{Femoral} &\alert{ CGAN-L1} & \alert{IoU} & \alert{ $ 0.75 \pm 0.0148 $} & \alert{Propio} \\
+					\hline
+					Femoral & U-net & IoU & $ 0.644 \pm NR $ & \cite{Huang2019}\\
+					\hline
+					\hline
+					\textbf{Mediano} & \textbf{CNN+Spatiotemporal} & \textbf{DS} & \textbf{$ 0.96 \pm 0.2500$} & \textbf{\cite{Hafiane2017}} \\
+					\hline
+					\alert{Mediano} & \alert{CGAN-IoU} & \alert{DS} & \alert{$ 0.92 \pm 0.0169 $} & \alert{Propio} \\
+					\hline
+					Mediano & Localization + PGVF  & DS & $ 0.81 \pm 0.1000 $ & \cite{Hadjerci2016} \\
+					\hline
+					\alert{Mediano} & \alert{CGAN-L1} & {DS} & \alert{$ 0.62 \pm 0.1060$} & \alert{Propio} \\
+					\hline
+					Mediano & Graph Cuts & DS & $ 0.60 \pm 0.0052$ & \cite{GilGonzalez2015} \\
+					\hline
+					\hline
+					\textbf{Plexo Braquial} & \textbf{GAN-DPP} & \textbf{DS} & $ \mathbf{0.99} \pm NR  $ & \cite{Rubasinghe2019} \\
+					\hline
+					Plexo Braquial & GAN-ET & DS & $ 0.73 \pm NR $ & \cite{Liu2018} \\
+					\hline
+					\alert{Plexo Braquia}l & \alert{CGAN-IoU} & \alert{DS} & \alert{$ 0.72 \pm 0.0426 $} & \alert{Propio} \\
+					\hline
+					Plexo Braquial & U-net & DS & $ 0.69 \pm 0.0004  $ & \cite{Jocic2017} \\
+					\hline
+					Plexo Braquial & ResNet54+PDC+fs5 & DS & $ 0.69 \pm NR  $ & \cite{Zhang2017} \\
+					\hline
+					\alert{Plexo Braquial} & \alert{CGAN-L1} & {DS} & \alert{$ 0.43 \pm 0.0869  $} & \alert{Propio} \\
+					\hline
+					\hline
+					\textbf{\alert{Ciático}} & \textbf{\alert{CGAN-IoU}} & \textbf{\alert{DS}} & \textbf{\alert{$ \mathbf{0.89 \pm 0.1250} $}} & \textbf{\alert{Propio}} \\
+					\hline
+					\alert{Ciático} & \alert{CGAN-L1} & \alert{DS} & \alert{$ 0.64 \pm 0.0545 $} & \alert{Propio} \\
+					\hline
+					\hline
+					\textbf{\alert{Cubital}} & \textbf{\alert{CGAN-IoU}} & \textbf{\alert{DS}} & \textbf{\alert{$0.78 \pm 0.076 $}} & \textbf{\alert{Propio}} \\
+					\hline
+					\alert{Cubital} & \alert{CGAN-L1} & \alert{DS} & \alert{$ 0.63 \pm 0.0902 $} & \alert{Propio} \\
+					\hline
+				\end{tabular}
+				\label{tab:comparacion}
+				\endgroup
+			\end{table}
+		
+		\end{frame}
+
 
 
 
@@ -234,8 +598,28 @@
 		\end{block}
 	\end{frame}
 	
+	\begin{frame}{Publicaciones}
+		El \alert{sistema automático para la segmentación de nervios periféricos} se presentó en el \textit{segundo simposio de investigación Comfamiliar 2019} bajo la \alert{modalidad de ponencia} el día 24 de octubre de 2019, llevado a cabo en la ciudad de \alert{Pereira, Risaralda}, donde se presentaron diferentes estudios de investigación desarrollados en el área de la medicina \alert{frente a una comunidad científica multidisciplinar}.
+		
+		\begin{block}{Segundo simposio de investigación Comfamiliar 2019}
+			\begin{itemize}
+				\item Jiménez G. Andrés, Rodriguez M. Wilson, García A. Hernán \textit{Redes Generativas Adversarias para la Segmentación de Nervios Periféricos.} SIC 2019. Pereira-Risaralda.
+			\end{itemize}
+		\end{block}
+		
+	\end{frame}
+	
+	
+	\section{Referencias}
 	\bibliographystyle{ieeetr}
 	\bibliography{bibio}
+
+	\begin{frame}{Fin de la presentación.}
+			\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=\linewidth]{gracias}
+		\end{figure}
+	\end{frame}
 	
 	
 \end{document}
